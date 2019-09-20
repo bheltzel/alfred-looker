@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Search in Looker</name>
+  <version>0.0.1</version>
+  <bundle>bheltzel.looker</bundle>
+  <file>alfred-looker-0.0.1.alfredworkflow</file>
+</workflow>
