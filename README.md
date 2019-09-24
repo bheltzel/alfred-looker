@@ -6,7 +6,7 @@ An [Alfred Workflow](https://www.alfredapp.com/workflows/) to search on your Loo
 
 ## Download and Installation
 
-Download the workflow file from [the latest GitHub release](https://github.com/bheltzel/alfred-looker/releases/latest) and install it by double-clicking on `-0.0.1.alfredworkflow`.
+Download the workflow file from [the latest GitHub release](https://github.com/bheltzel/alfred-looker/releases/latest) and install it by double-clicking on `looker.alfredworkflow`.
 
 ## Setup
 * Use `lkr > host {looker_host}` to set Looker instance. `lkr > host demo` or `lkr > host demo.au` for example. Do not include full URL.
