@@ -34,10 +34,10 @@ SETTINGS = [
     }
 ]
 
-def conn(host, my_token, my_secret):
+def conn(looker_host, my_token, my_secret):
     from lookerapi import LookerApi
 
-    my_host = 'https://%s.looker.com:19999/api/3.0/' % (host)
+    my_host = 'https://%s.looker.com:19999/api/3.0/' % (looker_host)
     looker = LookerApi(host=my_host, token=my_token, secret=my_secret)
     if looker is None:
         notify('Alfred - Looker', 'Connection to Looker failed!')
@@ -52,7 +52,6 @@ def get_object_url(instance_url, object_id, use_classic = False):
         return "%s/one/one.app#/sObject/%s/view" % (instance_url, object_id)
 
 def main(wf):
-    host = 'demo'
     wf.logger.debug(wf.args)
 
     # Get query from Alfred
@@ -134,7 +133,7 @@ def main(wf):
                 for record in results_dashboards:
                     sub = "sub"
                     ico = "dashboard.png"
-                    url = "https://%s.looker.com/dashboards/%s" % (host, str(record['id']))
+                    url = "https://%s.looker.com/dashboards/%s" % (looker_host, str(record['id']))
 
                     if 'view_count' in record:
                         if record['view_count'] > 0:
@@ -163,7 +162,7 @@ def main(wf):
                 for record in results_looks:
                     sub = "sub"
                     ico = "look.png"
-                    url = "https://%s.looker.com/looks/%s" % (host, str(record['id']))
+                    url = "https://%s.looker.com/looks/%s" % (looker_host, str(record['id']))
 
                     if 'view_count' in record:
                         if record['view_count'] > 0:
